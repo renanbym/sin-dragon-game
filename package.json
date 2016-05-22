@@ -13,9 +13,6 @@
   "devDependencies": {
     "bower": "latest",
     "grunt": "latest",
-    "grunt-contrib-clean": "latest",
-    "grunt-contrib-connect": "latest",
-    "grunt-contrib-copy": "latest",
     "grunt-contrib-imagemin": "latest",
     "grunt-contrib-sass": "latest",
     "grunt-contrib-uglify": "latest",

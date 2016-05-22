@@ -7,12 +7,12 @@ module.exports = function(grunt) {
                 options : {
                     mangle : false,
                     sourceMap: true,
-                    beautify: true,
                     sourceMapName: 'public/assets/js/main.map'
                 },
                 files: {
                     'public/assets/js/main.js' : [
-                        'public/source/js/main.js'
+                        'public/source/js/main.js',
+                        'public/source/js/models/*.js'
                     ]
 
                 }
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
             dist : {
                 options : { style : 'compressed' },
                 files : {
-                    'public/assets/css/style.css' : 'public/source/sass/style.scss'
+                    'public/assets/css/style.css' : 'public/source/sass/style.sass'
                 }
             }
         }
@@ -41,11 +41,6 @@ module.exports = function(grunt) {
         }
 
 
-        ,clean: {
-            server:{
-                src: ['public/source/**', 'README.md']
-            }
-        }
 
 
         ,watch : {
@@ -54,25 +49,14 @@ module.exports = function(grunt) {
             images:  { files: 'public/source/images/**/*.{png,jpg,gif}', tasks: [ 'imagemin' ] }
         }
 
-        ,connect: {
-            server: {
-                options: {
-                    port: 3000,
-                    base: '/Users/renanbym/workspace/game/hello-world'
-                }
-            }
-        }
 
     });
 
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-connect');
 
 
     grunt.registerTask( 'default', ['uglify', 'sass', 'imagemin'] );
