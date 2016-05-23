@@ -26,8 +26,8 @@ Spritesheet.prototype = {
       this.ultimoTempo = agora;
    },
    desenhar: function(x, y) {
-      var largura = this.imagem.width / this.numColunas;
-      var altura = this.imagem.height / this.numLinhas;
+      var largura = 47;
+      var altura = 55;
 
       this.context.drawImage(
          this.imagem,
