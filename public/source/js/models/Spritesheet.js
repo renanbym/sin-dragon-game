@@ -1,4 +1,4 @@
-function Spritesheet(context, imagem, linhas, colunas) {
+Spritesheet(context, imagem, linhas, colunas) => {
    this.context = context;
    this.imagem = imagem;
    this.numLinhas = linhas;
@@ -8,8 +8,8 @@ function Spritesheet(context, imagem, linhas, colunas) {
    this.coluna = 0;
 }
 Spritesheet.prototype = {
-   proximoQuadro: function() {
-      var agora = new Date().getTime();
+   proximoQuadro => {
+      let agora = new Date().getTime();
 
       // Se ainda não tem último tempo medido
       if (! this.ultimoTempo) this.ultimoTempo = agora;
@@ -25,9 +25,9 @@ Spritesheet.prototype = {
       // Guardar hora da última mudança
       this.ultimoTempo = agora;
    },
-   desenhar: function(x, y) {
-      var largura = 47;
-      var altura = 55;
+   desenhar (x, y) => {
+      let largura = 47;
+      let altura = 55;
 
       this.context.drawImage(
          this.imagem,

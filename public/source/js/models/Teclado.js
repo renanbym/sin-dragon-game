@@ -1,12 +1,12 @@
 // Códigos de teclas - aqui vão todos os que forem necessários
-var SETA_ESQUERDA = 37;
-var SETA_CIMA = 38;
-var SETA_DIREITA = 39;
-var SETA_BAIXO = 40;
-var ESPACO = 32;
-var KEY_C = 67;
+const SETA_ESQUERDA = 37;
+const SETA_CIMA = 38;
+const SETA_DIREITA = 39;
+const SETA_BAIXO = 40;
+const ESPACO = 32;
+const KEY_C = 67;
 
-function Teclado(elemento) {
+Teclado (elemento) => {
    this.elemento = elemento;
 
    // Array de teclas pressionadas
@@ -18,10 +18,10 @@ function Teclado(elemento) {
    // Funções de disparo registradas
    this.funcoesDisparo = [];
 
-   var teclado = this;
+   let teclado = this;
 
-   elemento.addEventListener('keydown', function(evento) {
-      var tecla = evento.keyCode;  // Tornando mais legível ;)
+   elemento.addEventListener('keydown', (evento) => {
+      let tecla = evento.keyCode;  // Tornando mais legível ;)
       teclado.pressionadas[tecla] = true;
 
       // Disparar somente se for o primeiro keydown da tecla
@@ -32,18 +32,18 @@ function Teclado(elemento) {
       }
    });
 
-   elemento.addEventListener('keyup', function(evento) {
+   elemento.addEventListener('keyup', (evento) => {
       teclado.pressionadas[evento.keyCode] = false;
       teclado.disparadas[evento.keyCode] = false;
    });
 
-   
+
 }
 Teclado.prototype = {
-   pressionada: function(tecla) {
+   pressionada (tecla) => {
       return this.pressionadas[tecla];
    },
-   disparou: function(tecla, callback) {
+   disparou (tecla, callback) => {
       this.funcoesDisparo[tecla] = callback;
    }
 }

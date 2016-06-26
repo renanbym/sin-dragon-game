@@ -1,11 +1,10 @@
-var DIREITA = 1;
-var ESQUERDA = 2;
-var CIMA = 3;
-var BAIXO = 4;
+const DIREITA = 1;
+const ESQUERDA = 2;
+const CIMA = 3;
+const BAIXO = 4;
 
-function SinDragon(context, teclado) {
-
-      var sprite = new Image();
+SinDragon (context, teclado) => {
+      let sprite = new Image();
       sprite.src = '/public/assets/images/sin-dragon.png';
 
       this.context = context;
@@ -21,9 +20,11 @@ function SinDragon(context, teclado) {
       // Estado inicial
       this.andando = false;
       this.direcao = DIREITA;
-}
+};
+
 SinDragon.prototype = {
-      atualizar: function() {
+
+      atualizar => {
             if (this.teclado.pressionada(SETA_DIREITA)) {
                   // Se já não estava neste estado...
                   if (! this.andando || this.direcao != DIREITA) {
@@ -91,7 +92,8 @@ SinDragon.prototype = {
                   this.andando = false;
             }
       },
-      desenhar: function() {
+      desenhar => {
             this.sheet.desenhar(this.x, this.y);
       }
+
 }

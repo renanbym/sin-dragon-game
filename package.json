@@ -8,15 +8,19 @@
   },
   "author": "Renan Mariano <renanbym@gmail.com>",
   "license": "ISC",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
     "bower": "latest",
     "grunt": "latest",
+    "grunt-babel": "^6.0.0",
+    "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-imagemin": "latest",
     "grunt-contrib-sass": "latest",
-    "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
-    "grunt-usemin": "latest"
+    "grunt-sass-globbing": "^1.5.1",
+    "grunt-usemin": "latest",
+    "grunt-wiredep": "^3.0.1",
+    "load-grunt-tasks": "^3.5.0"
   }
 }
