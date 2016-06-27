@@ -1,9 +1,11 @@
 @import "_config/vars"
+@import "_config/mixins"
 
 *
     margin: 0px
     padding: 0px
     font-size: 100%
+    @extend %clearfix
 
 html
     position: relative
@@ -26,3 +28,5 @@ body
     bottom: 0px
     left: 0px
     right: 0px
+    @include box-shadow( 0 0 10px $base3 )
+    background: $green

@@ -3,23 +3,19 @@ module.exports = function(grunt){
 
     grunt.initConfig({
         babel : {
+            options : {
+                sourceMap: true,
+                presets: ['es2015']
+            },
+            dist: {
+                files: {
+                    'public/assets/js/main.js' : [
+                        'public/source/js/modules/**/*.js',
+                        'public/source/js/main.js'
+                    ]
 
-            main: {
-                options : {
-                    sourceMap: true,
-                    presets: ['es2015']
-                },
-                dist: {
-                    files: {
-                        'public/assets/js/main.js' : [
-                            'public/source/js/models/*.js',
-                            'public/source/js/main.js'
-                        ]
-
-                    }
                 }
             }
-
         },
         sass : {
             main : {

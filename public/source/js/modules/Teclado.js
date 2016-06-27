@@ -6,7 +6,7 @@ const SETA_BAIXO = 40;
 const ESPACO = 32;
 const KEY_C = 67;
 
-Teclado (elemento) => {
+function Teclado(elemento){
    this.elemento = elemento;
 
    // Array de teclas pressionadas
@@ -27,8 +27,8 @@ Teclado (elemento) => {
       // Disparar somente se for o primeiro keydown da tecla
       if (teclado.funcoesDisparo[tecla] && !teclado.disparadas[tecla]) {
 
-          teclado.disparadas[tecla] = true;
-          teclado.funcoesDisparo[tecla] () ;
+         teclado.disparadas[tecla] = true;
+         teclado.funcoesDisparo[tecla] () ;
       }
    });
 
@@ -39,11 +39,9 @@ Teclado (elemento) => {
 
 
 }
-Teclado.prototype = {
-   pressionada (tecla) => {
-      return this.pressionadas[tecla];
-   },
-   disparou (tecla, callback) => {
-      this.funcoesDisparo[tecla] = callback;
-   }
+Teclado.prototype.pressionada = function(tecla) {
+   return this.pressionadas[tecla];
+},
+Teclado.prototype.disparou  = function(tecla, callback) {
+   this.funcoesDisparo[tecla] = callback;
 }
